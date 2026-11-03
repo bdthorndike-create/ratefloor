@@ -1,75 +1,52 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RateFloor: Freelance Hourly Rate Calculator</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RateFloor: Freelance Hourly Rate Calculator</title><meta name="description" content="Work backward from the take-home pay you want to the minimum hourly, daily and project rate you should charge as a freelancer.">
 <link rel="canonical" href="https://ratefloor-calculator.netlify.app/">
-<meta property="og:title" content="RateFloor: Freelance Hourly Rate Calculator">
-<meta property="og:description" content="Work backward from the take-home pay you want to the minimum rate you should charge.">
-<meta property="og:url" content="https://ratefloor-calculator.netlify.app/">
-<meta property="og:type" content="website">
-<meta name="description" content="Work backward from the take-home pay you want to the minimum hourly, daily and project rate you should charge as a freelancer.">
-<style>
-:root{--bg:#faf8f4;--card:#fff;--ink:#1f1b16;--mute:#6b6458;--acc:#b4531a;--line:#e6dfd2}
-@media(prefers-color-scheme:dark){:root{--bg:#171410;--card:#201c17;--ink:#f1ebe0;--mute:#a79d8c;--acc:#f0985c;--line:#342e26}}
-*{box-sizing:border-box}
-body{margin:0;font:16px/1.5 Georgia,'Times New Roman',serif;background:var(--bg);color:var(--ink)}
-main{max-width:880px;margin:0 auto;padding:28px 16px 56px}
-h1{font-size:2rem;margin:0 0 4px;letter-spacing:-.5px}
-.sub{color:var(--mute);margin:0 0 22px}
-.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:start}
-@media(max-width:720px){.grid{grid-template-columns:1fr}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
-h2{font:600 .8rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--mute);margin:18px 0 6px}
-h2:first-child{margin-top:0}
-label{display:block;font:.9rem system-ui,sans-serif;color:var(--mute);margin-top:10px}
-input{width:100%;padding:9px 10px;margin-top:4px;font:1rem system-ui,sans-serif;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
-.hero{font-size:3rem;font-weight:700;color:var(--acc);line-height:1.1}
-.row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line);font-family:system-ui,sans-serif;font-size:.95rem}
-.row:last-child{border:0}
-.note{color:var(--mute);font:.8rem system-ui,sans-serif;margin-top:16px}
-</style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate my freelance hourly rate?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the take-home pay you want, gross it up for taxes, then add business costs, health insurance and retirement savings. Divide that total by the hours you can realistically bill in a year, not the hours you work. RateFloor does this for you."}}, {"@type": "Question", "name": "Why can't I just divide a salary by 2,080 hours?", "acceptedAnswer": {"@type": "Answer", "text": "A 40-hour week for 52 weeks is 2,080 hours, but freelancers don't bill all of them. Time off, sales, admin, invoicing and gaps between projects are unpaid, and you also cover your own taxes and benefits. Using only billable hours prevents underpricing."}}, {"@type": "Question", "name": "What share of my time is billable?", "acceptedAnswer": {"@type": "Answer", "text": "It varies by field and by how much marketing and admin you do. Many freelancers start with an assumption around half to two-thirds and adjust after tracking their own time for a few weeks. Change the billable share in the calculator to see how sensitive your rate is."}}, {"@type": "Question", "name": "What tax rate should I enter?", "acceptedAnswer": {"@type": "Answer", "text": "Enter your own combined estimate of income tax and self-employment tax. This depends on your country, region and income, so check with an accountant or your tax authority's guidance. The default is only an example."}}, {"@type": "Question", "name": "Is this the rate I should charge?", "acceptedAnswer": {"@type": "Answer", "text": "It is a floor, the lowest rate that meets your income goal under your assumptions. Market demand, your experience and the value you deliver may justify charging more."}}]}</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#3640b0">
+<meta property="og:type" content="website"><meta property="og:site_name" content="RateFloor">
+<meta property="og:title" content="RateFloor: Freelance Hourly Rate Calculator"><meta property="og:description" content="Work backward from the take-home pay you want to the minimum hourly, daily and project rate you should charge as a freelancer.">
+<meta property="og:url" content="https://ratefloor-calculator.netlify.app/"><meta property="og:image" content="https://ratefloor-calculator.netlify.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/style.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VD6P0Z7NSE"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-VD6P0Z7NSE",{page_location:location.origin+location.pathname+location.search});</script>
-</head>
-<body>
-<main>
-<h1>RateFloor</h1>
-<p class="sub">The lowest rate that still gets you the income you want. Everything stays in your browser.</p>
-<div class="grid">
-<section class="card">
-<h2>Income goal</h2>
+<meta name="google-adsense-account" content="ca-pub-1399340452541176">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399340452541176" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate my freelance hourly rate?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the take-home pay you want, gross it up for taxes, then add business costs, health insurance and retirement savings. Divide that total by the hours you can realistically bill in a year, not the hours you work. RateFloor does this for you."}}, {"@type": "Question", "name": "Why can't I just divide a salary by 2,080 hours?", "acceptedAnswer": {"@type": "Answer", "text": "A 40-hour week for 52 weeks is 2,080 hours, but freelancers don't bill all of them. Time off, sales, admin, invoicing and gaps between projects are unpaid, and you also cover your own taxes and benefits. Using only billable hours prevents underpricing."}}, {"@type": "Question", "name": "What share of my time is billable?", "acceptedAnswer": {"@type": "Answer", "text": "It varies by field and by how much marketing and admin you do. Many freelancers start with an assumption around half to two-thirds and adjust after tracking their own time for a few weeks. Change the billable share in the calculator to see how sensitive your rate is."}}, {"@type": "Question", "name": "What tax rate should I enter?", "acceptedAnswer": {"@type": "Answer", "text": "Enter your own combined estimate of income tax and self-employment tax. This depends on your country, region and income, so check with an accountant or your tax authority's guidance. The default is only an example."}}, {"@type": "Question", "name": "Is this the rate I should charge?", "acceptedAnswer": {"@type": "Answer", "text": "It is a floor, the lowest rate that meets your income goal under your assumptions. Market demand, your experience and the value you deliver may justify charging more."}}]}</script>
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="w"><a class="brand" href="/"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#3640b0"/><circle cx="16" cy="13.800" r="6.600" fill="#fff"/><path d="M16 10.200v7.200M13.600 12.200c0-1 .9-1.700 2.400-1.700s2.400.7 2.400 1.700c0 2.200-4.800 1.100-4.800 3.300 0 1 .9 1.700 2.400 1.700s2.400-.7 2.400-1.700" fill="none" stroke="#3640b0" stroke-width="1.500" stroke-linecap="round"/><rect x="6" y="23.200" width="20" height="3.200" rx="1.600" fill="#fff"/></svg>RateFloor</a><nav class="main" aria-label="Main"><a href="/" aria-current="page">Calculator</a><a href="/guides/">Guides</a><a href="/guides/travel-work-gear/">Travel gear</a><a href="/about/">About</a></nav></div></header>
+<div class="band wide"><div class="w"><h1>What is the lowest freelance rate you can afford?</h1><p class="lead">Work backward from the income you want to the hourly, day and project rate that gets you there.</p><ul class="trust"><li>Free to use</li><li>No sign-up</li><li>Your numbers stay in your browser</li></ul></div></div>
+<main id="main" class="w">
+<div class="calc">
+<section class="card"><h2>Income goal</h2><div class="fields">
 <label>Take-home pay you want per year ($)<input id="net" type="number" value="70000" step="1000"></label>
-<label>Estimated tax rate (income + self-employment, %)<input id="tax" type="number" value="28" step="1"></label>
-<h2>Yearly business costs</h2>
+<label>Estimated tax rate (income + self-employment, %)<input id="tax" type="number" value="28" step="1"></label></div>
+<h2>Yearly business costs</h2><div class="fields">
 <label>Health insurance ($ per year)<input id="health" type="number" value="6000" step="100"></label>
 <label>Software, equipment, other costs ($ per year)<input id="costs" type="number" value="3000" step="100"></label>
-<label>Retirement savings ($ per year)<input id="ret" type="number" value="5000" step="500"></label>
-<h2>Time</h2>
+<label>Retirement savings ($ per year)<input id="ret" type="number" value="5000" step="500"></label></div>
+<h2>Time</h2><div class="fields">
 <label>Weeks off per year (vacation, holidays, sick)<input id="off" type="number" value="6" step="1"></label>
 <label>Working hours per week<input id="hrs" type="number" value="40" step="1"></label>
 <label>Share of work hours you can bill (%)<input id="bill" type="number" value="60" step="1"></label>
-<label>Profit buffer for slow periods (%)<input id="buf" type="number" value="10" step="1"></label>
+<label>Profit buffer for slow periods (%)<input id="buf" type="number" value="10" step="1"></label></div>
 </section>
-<section class="card" aria-live="polite">
-<h2>Minimum hourly rate</h2>
-<div class="hero" id="rate">–</div>
-<div style="height:14px"></div>
+<section class="card result" aria-live="polite"><h2>Minimum hourly rate</h2>
+<div class="rate" id="rate">–</div>
 <div class="row"><span>Day rate (8 billable hrs)</span><b id="day">–</b></div>
 <div class="row"><span>Weekly (at your billable share)</span><b id="wk">–</b></div>
 <div class="row"><span>Revenue needed per year</span><b id="rev">–</b></div>
 <div class="row"><span>Billable hours per year</span><b id="bh">–</b></div>
 <div class="row"><span>Project: 40 hours, quoted</span><b id="proj">–</b></div>
-<p class="note" id="msg"></p>
-<button id="share" type="button" style="margin-top:12px;padding:9px 14px;font:.9rem system-ui,sans-serif;border:1px solid var(--acc);color:var(--acc);background:transparent;border-radius:6px;cursor:pointer">Copy link to these numbers</button>
-</section>
-</div>
-<section class="card" style="margin-top:16px"><h2>How freelance rates work</h2><h3 style="font:600 1rem system-ui,sans-serif;margin:14px 0 4px">How do I calculate my freelance hourly rate?</h3><p style="margin:0">Start with the take-home pay you want, gross it up for taxes, then add business costs, health insurance and retirement savings. Divide that total by the hours you can realistically bill in a year, not the hours you work. RateFloor does this for you.</p><h3 style="font:600 1rem system-ui,sans-serif;margin:14px 0 4px">Why can't I just divide a salary by 2,080 hours?</h3><p style="margin:0">A 40-hour week for 52 weeks is 2,080 hours, but freelancers don't bill all of them. Time off, sales, admin, invoicing and gaps between projects are unpaid, and you also cover your own taxes and benefits. Using only billable hours prevents underpricing.</p><h3 style="font:600 1rem system-ui,sans-serif;margin:14px 0 4px">What share of my time is billable?</h3><p style="margin:0">It varies by field and by how much marketing and admin you do. Many freelancers start with an assumption around half to two-thirds and adjust after tracking their own time for a few weeks. Change the billable share in the calculator to see how sensitive your rate is.</p><h3 style="font:600 1rem system-ui,sans-serif;margin:14px 0 4px">What tax rate should I enter?</h3><p style="margin:0">Enter your own combined estimate of income tax and self-employment tax. This depends on your country, region and income, so check with an accountant or your tax authority's guidance. The default is only an example.</p><h3 style="font:600 1rem system-ui,sans-serif;margin:14px 0 4px">Is this the rate I should charge?</h3><p style="margin:0">It is a floor, the lowest rate that meets your income goal under your assumptions. Market demand, your experience and the value you deliver may justify charging more.</p></section>
-<p class="note">Estimates, not tax or financial advice. Tax rates vary; ask an accountant for yours. Formula: (take-home ÷ (1 − tax) + costs + insurance + retirement) × (1 + buffer) ÷ billable hours.</p>
-<p class="note"><a href="privacy.html" style="color:var(--acc)">Privacy</a> &middot; <a href="guides/web-developer-freelance-rate/" style="color:var(--acc)">Web developer rates</a> &middot; <a href="guides/graphic-designer-freelance-rate/" style="color:var(--acc)">Graphic designer rates</a> &middot; <a href="guides/travel-work-gear/" style="color:var(--acc)">Travel work gear</a></p>
-</main>
+<p class="mut" id="msg"></p>
+<button id="share" class="btn ghost" type="button">Copy link to these numbers</button>
+</section></div>
+<p class="note">Estimates, not tax or financial advice. Tax rates vary; ask an accountant for yours. Formula: (take-home &divide; (1 &minus; tax) + costs + insurance + retirement) &times; (1 + buffer) &divide; billable hours.</p>
+<h2>How freelance rates work</h2>
+<h3>How do I calculate my freelance hourly rate?</h3><p>Start with the take-home pay you want, gross it up for taxes, then add business costs, health insurance and retirement savings. Divide that total by the hours you can realistically bill in a year, not the hours you work. RateFloor does this for you.</p><h3>Why can&#x27;t I just divide a salary by 2,080 hours?</h3><p>A 40-hour week for 52 weeks is 2,080 hours, but freelancers don&#x27;t bill all of them. Time off, sales, admin, invoicing and gaps between projects are unpaid, and you also cover your own taxes and benefits. Using only billable hours prevents underpricing.</p><h3>What share of my time is billable?</h3><p>It varies by field and by how much marketing and admin you do. Many freelancers start with an assumption around half to two-thirds and adjust after tracking their own time for a few weeks. Change the billable share in the calculator to see how sensitive your rate is.</p><h3>What tax rate should I enter?</h3><p>Enter your own combined estimate of income tax and self-employment tax. This depends on your country, region and income, so check with an accountant or your tax authority&#x27;s guidance. The default is only an example.</p><h3>Is this the rate I should charge?</h3><p>It is a floor, the lowest rate that meets your income goal under your assumptions. Market demand, your experience and the value you deliver may justify charging more.</p>
+<h2>Rate guides and gear</h2>
+<ul class="cards"><li><a href="/guides/web-developer-freelance-rate/"><strong>Web developer rates</strong><span>What the BLS says web developers and designers earn, and why that is not your freelance rate.</span></a></li><li><a href="/guides/graphic-designer-freelance-rate/"><strong>Graphic designer rates</strong><span>Turn published pay data into a rate that covers your taxes, costs and unbilled time.</span></a></li><li><a href="/guides/travel-work-gear/"><strong>Travel work gear</strong><span>A short checklist of gear for working from the road, and how to count it in your rate.</span></a></li></ul>
 <script>
 const $=id=>document.getElementById(id);
 const m=n=>"$"+Math.round(n).toLocaleString();
@@ -96,5 +73,12 @@ $("share").addEventListener("click",async()=>{save();try{await navigator.clipboa
 document.querySelectorAll("input").forEach(e=>e.addEventListener("input",()=>{calc();save()}));
 load();calc();
 </script>
-</body>
-</html>
+</main>
+<footer class="foot"><div class="w">
+<div class="cols">
+<div><a class="brand" href="/"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#3640b0"/><circle cx="16" cy="13.800" r="6.600" fill="#fff"/><path d="M16 10.200v7.200M13.600 12.200c0-1 .9-1.700 2.400-1.700s2.400.7 2.400 1.700c0 2.200-4.800 1.100-4.800 3.300 0 1 .9 1.700 2.400 1.700s2.400-.7 2.400-1.700" fill="none" stroke="#3640b0" stroke-width="1.500" stroke-linecap="round"/><rect x="6" y="23.200" width="20" height="3.200" rx="1.600" fill="#fff"/></svg>RateFloor</a><p>A free calculator that works backward from the income you want to the lowest hourly, day and project rate you should charge as a freelancer.</p></div>
+<div><h3>Explore</h3><ul><li><a href="/">Rate calculator</a></li><li><a href="/guides/">Rate guides</a></li><li><a href="/guides/travel-work-gear/">Travel work gear</a></li></ul></div>
+<div><h3>About</h3><ul><li><a href="/about/">About RateFloor</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy.html">Privacy policy</a></li></ul></div>
+</div>
+<p class="fine"><b>Disclosure:</b> As an Amazon Associate I earn from qualifying purchases. Some links are affiliate links. RateFloor gives general estimates, not tax, legal or financial advice. &copy; 2026 RateFloor</p>
+</div></footer></body></html>
